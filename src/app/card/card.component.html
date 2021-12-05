@@ -1,0 +1,18 @@
+<div (click)="pickPokemon()">
+    <mat-card>
+        <img mat-card-lg-image 
+            [src]="pokemon?.sprites?.other?.dream_world?.front_default" 
+            alt="sprite img"
+        >
+        <mat-card-content>
+            <mat-card-title>{{ pokemon.species.name.toUpperCase() }}</mat-card-title>
+            <p>#{{ pokemon.id }}</p>
+            <p><span>Weight:</span>{{ pokemon.weight }}</p>
+            <p><span>Height:</span>{{ pokemon.height }}</p>
+            <span>Types:</span>
+            <ul *ngFor="let type of pokemon.types">
+                <li>{{ type.type.name }}</li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+</div>

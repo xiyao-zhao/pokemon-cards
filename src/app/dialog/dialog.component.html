@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Do you want to select {{ data.species.name.toUpperCase() }}?</h1>
+<div mat-dialog-content>
+    <img [src]="data?.sprites?.front_default" alt="">
+</div>
+<div mat-dialog-actions class="buttons">
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data.species.name" cdkFocusInitial>Ok</button>
+</div>

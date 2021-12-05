@@ -1,0 +1,15 @@
+<ng-container *ngIf="!displayItem">
+    <app-card 
+        *ngFor="let pokemon of pokemonArr$ | async"
+        [pokemon]="pokemon"
+        (clicked)="openDialog($event)"
+    ></app-card>
+</ng-container>
+<ng-container *ngIf="displayItem">
+    <app-single-card
+        [pokemonSelect]="selectedPokemon$ | async"
+        [ngClass]="{singleItem: displayItem}"
+        (clickedAll)="showAll($event)"
+    ></app-single-card>
+</ng-container>
+

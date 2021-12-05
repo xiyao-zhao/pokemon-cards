@@ -1,0 +1,20 @@
+<div>
+    <mat-card>
+        <img mat-card-lg-image 
+            [src]="pokemonSelect?.sprites?.other?.dream_world?.front_default" 
+            alt="sprite img"
+        >
+        <mat-card-content>
+            <mat-card-title>{{ pokemonSelect?.species.name.toUpperCase() }}</mat-card-title>
+            <p>#{{ pokemonSelect?.id }}</p>
+            <p><span>Weight:</span>{{ pokemonSelect?.weight }}</p>
+            <p><span>Height:</span>{{ pokemonSelect?.height }}</p>
+            <span>Types:</span>
+            <ul *ngFor="let type of pokemonSelect?.types">
+                <li>{{ type.type.name }}</li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+</div>
+<button (click)="all()">Show All</button>
+
